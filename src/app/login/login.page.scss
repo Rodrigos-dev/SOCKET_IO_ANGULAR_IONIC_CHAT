@@ -1,0 +1,67 @@
+ion-content {
+    --background: linear-gradient(180deg,
+            rgba(54, 172, 241, 1) 30%,
+            rgba(255, 255, 255, 1) 100%);
+    --overflow: hidden;
+}
+
+.container {
+    max-height: 100vh;
+    min-width: 300px;
+    max-width: 500px;
+    //overflow-y: scroll;
+}
+
+.login-art {
+    margin-top: 35px;
+}
+
+.logoNome {
+    margin-top: -10px;
+    margin-bottom: -10px;
+}
+
+ion-item {
+    --border-radius: 10px;
+    margin-bottom: 25px;
+    margin-top: -10px;
+}
+
+ion-checkbox {
+    --background: none;
+    --background-checked: none;
+    margin-right: 10%;
+    height: 20px;
+    width: 20px;
+}
+
+.font-size-13 {
+    font-size: 13px;
+}
+
+.linhaEsqueceuSenha {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin-top: -35px;
+    margin-bottom: 10px;
+}
+
+.enter {
+    height: 40px;
+    font-size: 12px;
+    //margin-top: 10px;
+}
+
+.linhaUsuarioNovo {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>scrollTest</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [scrollEvents]="true" (ionScroll)="onScroll($event)">
+
+  <ion-row align-items-center>
+    <ion-col>
+      <ion-searchbar placeholder="Enter Row" [(ngModel)]="scrollTo"></ion-searchbar>
+    </ion-col>
+    <ion-col size="3">
+      <ion-button (click)="scrollListVisible()" [disabled]="!scrollTo">Scroll</ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-list>
+    <ion-item *ngFor="let item of arr; let i = index;" [class.focus]="scrollTo == i">
+      <ion-label>
+        {{item}}
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="offsetTop > 300">
+    <ion-fab-button (click)="scrollTop()">
+      <ion-icon name="arrow-up"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="offsetTop < 300">
+    <ion-fab-button (click)="scrollBottom()">
+      <ion-icon name="arrow-down"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

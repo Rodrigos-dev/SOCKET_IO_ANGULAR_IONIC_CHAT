@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-col class="w">
+      <ion-row class="ion-justify-content-start">
+        <ion-col class="t w">
+          {{chat.title}}
+        </ion-col>
+      </ion-row>
+
+      <ion-col class="w" *ngIf="chatIdStatusDigitando !== chat.chatId">
+        <ion-label
+          [color]="statusConectedFriends === 'online' ? 'success' : 'medium'">{{statusConectedFriends}}</ion-label>
+      </ion-col>
+
+      <ion-col class="w" *ngIf="statusDigitando.length > 0 && chatIdStatusDigitando === chat.chatId">
+        <ion-label class="statusDigitando" color="success">{{statusDigitando}}</ion-label>
+      </ion-col>
+
+      <!-- <ion-label class="statusUser" color="success" font-size="5px">onLine</ion-label> -->
+    </ion-col>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [scrollEvents]="true">
+  <ion-grid>
+
+    <ion-row *ngFor="let message of messages; let i = index;">
+
+      <ion-col size="9" *ngIf="message.author !== nickname" class="message"
+        [ngClass]="{'my_message': message.author === nickname, 'other_message': message.author !== nickname}">
+        <span class="user_name">{{ message.author }}:</span><br>
+
+        <ion-col class="ion-align-items-start">
+          <span>{{ message.text }}</span>
+        </ion-col>
+
+        <ion-col class="ion-align-items-end">
+          <p class="time hourMsg">{{message.msgHour}}</p>
+        </ion-col>
+      </ion-col>
+
+      <ion-col offset="3" size="9" *ngIf="message.author === nickname" class="message"
+        [ngClass]="{'my_message': message.author === nickname, 'other_message': message.author !== nickname}">
+        <span class="user_name">{{ message.author }}:</span><br>
+
+        <ion-row>
+
+          <ion-col size="8" class="y" class="ion-align-items-start">
+            <span>{{ message.text }}</span>
+          </ion-col>
+
+          <ion-col size="4" class="ion-align-items-end colHourReadMsg">
+            <ion-row class="ion-justify-content-end ion-align-items-end">
+              <p class="time hourMsg">{{message.msgHour}}</p>
+              <ion-icon [color]="message.read ? 'success' : '#fff'" class="iconReadMsg"
+                name="checkmark-done-outline"></ion-icon>
+            </ion-row>
+          </ion-col>
+
+        </ion-row>
+
+      </ion-col>
+
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-row class="message_row">
+      <ion-col size="9">
+        <ion-item no-lines>
+          <ion-input (ionChange)="buscaCep()" [(ngModel)]="digitando" type="text" placeholder="Message"
+            [(ngModel)]="message"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button clear color="primary" (click)="sendMessage()" [disabled]="message === ''">
+          Send
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

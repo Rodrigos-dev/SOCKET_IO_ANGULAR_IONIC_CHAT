@@ -1,0 +1,67 @@
+ion-header {
+    .title {
+        font-size: 22px;
+        color: black;
+        font-weight: bold;
+    }
+
+    .iconHelp {
+        margin-left: 4%;
+        font-size: x-large
+    }
+}
+
+.seta {
+    margin-left: 10px;
+    margin-right: 0;
+}
+
+.titulo {
+    margin-left: -10px;
+}
+
+ion-content {
+    .avatarNewGroup {
+        font-size: xx-large;
+        width: 40px;
+        height: 40px;
+        background-color: #4ab4f2;
+    }
+
+    .divLoading {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        height: 70vh;
+    }
+
+    .labelNewGroup {
+        font-weight: bold;
+        font-size: 18px
+    }
+
+    .bold {
+        font-weight: bold;
+    }
+
+    .noAlbum {
+        position: relative;
+        font-weight: bold;
+        top: 35%;
+        transform: translateY(-50%)
+    }
+
+    .iconHelp {
+        margin-left: 4%;
+        font-size: x-large
+    }
+
+    .totalWidth {
+        width: 100%;
+    }
+
+    .parcialWidth {
+        width: 85%;
+    }
+
+}

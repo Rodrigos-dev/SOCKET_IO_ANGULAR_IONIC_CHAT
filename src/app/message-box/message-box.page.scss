@@ -1,0 +1,69 @@
+.message {
+    padding: 10px !important;
+    transition: all 250ms ease-in-out !important;
+    border-radius: 10px !important;
+    margin-bottom: 4px !important;
+}
+
+.my_message {
+    background-color: var(--ion-color-primary) !important;
+    color: var(--ion-color-primary-contrast) !important;
+
+    .user_name,
+    .time {
+        color: var(--ion-color-light-shade);
+    }
+}
+
+.other_message {
+    background-color: var(--ion-color-light-shade) !important;
+    color: var(--ion-color-light-contrast) !important;
+
+    .user_name,
+    .time {
+        color: var(--ion-color-dark-tint);
+    }
+}
+
+.time {
+    float: right;
+    font-size: 12px;
+    margin-bottom: 0;
+}
+
+.message_row {
+    background-color: #fff;
+}
+
+.statusUser {
+    font-size: 12px;
+    width: 100%;
+    margin: 20px
+}
+
+.hourMsg {
+    height: 10px;
+    font-size: 10px;
+    margin-bottom: 5px;
+}
+
+.t {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.w {
+    padding: 0;
+}
+
+.iconReadMsg {
+    margin-left: 3px;
+    margin-bottom: 3px;
+    margin-right: 0;
+}
+
+.colHourReadMsg {
+    padding-right: 0;
+    padding-bottom: 0;
+    margin-bottom: -3px;
+}

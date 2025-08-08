@@ -1,0 +1,36 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="4" class="ion-text-start seta">
+        <ion-icon [routerLink]="['/friends-chat']" name="arrow-back-outline" style="font-size: 24px"></ion-icon>
+      </ion-col>
+      <ion-col size="4" class="ion-text-center titulo">
+        <ion-title class="ion-no-padding">Usuarios Apk</ion-title>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-text-center">
+
+  <ion-grid class="container" *ngFor="let user of users">
+
+    <ion-row (click)="createChatContact(user.id)">
+      <ion-col size="12">
+        <ion-item class="ion-no-padding" lines="full">
+          <ion-avatar slot="start">
+            <img [src]="user.avatar" />
+          </ion-avatar>
+          <ion-row style="display: contents">
+            <ion-col size="12">
+              <ion-label class="bold">{{ user.name | uppercase }}
+              </ion-label>
+            </ion-col>
+          </ion-row>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>

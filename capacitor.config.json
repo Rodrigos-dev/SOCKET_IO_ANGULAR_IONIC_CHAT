@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "chat_socket_io",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

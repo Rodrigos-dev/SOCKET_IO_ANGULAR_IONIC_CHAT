@@ -1,0 +1,82 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="4" class="ion-text-start seta">
+        <ion-icon (click)="desconected()" [routerLink]="['/login']" name="arrow-back-outline" style="font-size: 24px">
+        </ion-icon>
+      </ion-col>
+      <ion-col size="4" class="ion-text-center titulo">
+        <ion-title class="ion-no-padding">ChatsFriends</ion-title>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-text-center">
+
+  <ion-grid class="container" *ngFor="let chat of chats">
+
+    <ion-row (click)="naviteToBox(chat)">
+      <ion-col size="12">
+        <ion-item class="ion-no-padding" lines="full">
+          <ion-avatar slot="start">
+            <img [src]="chat.avatar" />
+          </ion-avatar>
+
+          <ion-row style="display: contents">
+
+            <ion-col size="6">
+              <ion-label class="bold">{{ chat.title | uppercase }}
+              </ion-label>
+
+              <ion-row>
+
+                <ion-col *ngIf="userLogado.name === chat.authorLastMsg" size="2">
+                  <ion-icon [color]="chat.lastMsgRead ? 'success' : '#fff'" class="iconReadMsg"
+                    name="checkmark-done-outline"></ion-icon>
+                </ion-col>
+
+                <ion-col *ngIf="chatIdStatusDigitando !== chat.chatId">
+                  <ion-label color="medium">{{ chat.lastMessage }}</ion-label>
+                </ion-col>
+
+                <ion-col *ngIf="statusDigitando.length > 0 && chatIdStatusDigitando === chat.chatId">
+                  <ion-label class="statusDigitando" color="success">{{statusDigitando}}</ion-label>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+
+            <ion-col size="6" class="ion-text-center">
+
+              <ion-row class="ion-align-items-start ion-justify-content-end">
+                <p class="dateLastMsg" style="font-size: 12px;" color="medium">{{ chat.lastMessageDate }}</p>
+              </ion-row>
+
+
+
+              <ion-row class="ion-align-items-center ion-justify-content-end">
+                <ion-col size="3" class="ion-align-items-center">
+                  <p class="badge">1</p>
+                </ion-col>
+              </ion-row>
+
+            </ion-col>
+
+          </ion-row>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button>
+      <ion-icon name="chevron-up-circle"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button [routerLink]="['/contatos']">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+
+</ion-content>

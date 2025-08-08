@@ -1,0 +1,67 @@
+<ion-content class="ion-text-center">
+
+  <ion-grid class="container">
+
+    <ion-col>
+      <img src="../../assets/icon/login-art.svg" width="305" height="250" class="login-art" />
+    </ion-col>
+
+    <ion-row>
+      <ion-col>
+        <form [formGroup]="authForm" class="ion-text-center" (submit)="onSubmit()">
+          <ion-col class="ion-text-center">
+            <ion-item>
+              <ion-icon name="person-add-outline" color="primary" slot="start"></ion-icon>
+              <ion-input formControlName="name" type="text" placeholder="Nome" autofocus="true"></ion-input>
+              <ion-note slot="end" color="danger" *ngIf="name.dirty && name.hasError('required')">Required</ion-note>
+            </ion-item>
+
+            <!-- <ion-item>
+              <ion-icon name="mail" color="primary" slot="start"></ion-icon>
+              <ion-input formControlName="email" type="email" placeholder="Email"></ion-input>
+              <ion-note slot="end" color="danger" *ngIf="email.dirty && email.hasError('required')">Required</ion-note>
+              <ion-note slot="end" color="danger" *ngIf="email.dirty && email.hasError('email')">Invalid email
+              </ion-note>
+            </ion-item> -->
+
+            <ion-item>
+              <ion-icon name="lock-closed" color="primary" slot="start"></ion-icon>
+              <ion-input class="inputs" formControlName="password" type="password" placeholder="Password"></ion-input>
+              <ion-note slot="end" color="danger" *ngIf="password.dirty && password.hasError('required')">Required
+              </ion-note>
+              <ion-note slot="end" color="danger" *ngIf="password.dirty && password.hasError('minlength')">Min 6
+                caracteres</ion-note>
+            </ion-item>
+          </ion-col>
+
+          <ion-row class="ion-align-items-center">
+            <ion-col size="6" class="linhaEsqueceuSenha">
+              <ion-checkbox class="checkboxLembrarSenha"></ion-checkbox>
+              <ion-label class="font-size-13"><u>Lembrar senha</u></ion-label>
+            </ion-col>
+            <ion-col size="6" class="linhaEsqueceuSenha">
+              <ion-label class="font-size-13" [routerLink]="['/forgot-password']">Esqueceu sua senha?</ion-label>
+            </ion-col>
+          </ion-row>
+
+          <ion-button expand="block" size="large" class="enter" type="submit" [disabled]="authForm.invalid">
+            Entrar
+          </ion-button>
+
+          <ion-row class="linhaUsuarioNovo">
+            <ion-label class="footer">Usuário novo?
+              <ion-button fill="clear" class="button-footer ion-no-padding" [routerLink]="['/register-user']">
+                <u [routerLink]="['/register-user']">CADASTRE-SE</u>
+              </ion-button>
+            </ion-label>
+          </ion-row>
+
+        </form>
+
+      </ion-col>
+
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>
