@@ -1,6 +1,6 @@
 **Chat App Socket Training**
 
-Este repositório contém um projeto de treinamento focado no desenvolvimento de um sistema de chat em tempo real utilizando tecnologias modernas: Socket.IO, NestJS, Ionic e integração com iOS.
+Este repositório contém um projeto de treinamento focado no desenvolvimento de um sistema de chat em tempo real utilizando tecnologias modernas: Socket.IO, NestJS, Ionic.
 
 O objetivo principal deste projeto é praticar a comunicação em tempo real, gerenciamento de status de usuários, e exibição avançada de mensagens em um aplicativo híbrido.
 
