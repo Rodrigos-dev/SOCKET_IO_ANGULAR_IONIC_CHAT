@@ -1,4 +1,5 @@
-Chat App Socket Training
+**Chat App Socket Training**
+
 Este repositório contém um projeto de treinamento focado no desenvolvimento de um sistema de chat em tempo real utilizando tecnologias modernas: Socket.IO, NestJS, Ionic e integração com iOS.
 
 O objetivo principal deste projeto é praticar a comunicação em tempo real, gerenciamento de status de usuários, e exibição avançada de mensagens em um aplicativo híbrido.
@@ -79,8 +80,3 @@ layout em geral que não foi o foco
     <td><img src="https://github.com/user-attachments/assets/3b6f1b58-cadd-413f-8d8b-aed04630bc7d" width="80"/></td>
   </tr>  
 </table>
-
-**Contato**
-Seu nome: Rodrigo Souza
-Email: rodrigos.ars.dev@gmail.com
-LinkedIn/GitHub: https://github.com/Rodrigos-dev
